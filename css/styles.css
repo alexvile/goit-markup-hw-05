@@ -202,34 +202,41 @@ p {
   height: 100%;
   background-color: var(--backdrop-color);
   z-index: 2;
+  opacity: 1;
+  transition: opacity 250ms var(--main-animation);
 }
 .backdrop.is-hidden {
-  opacity: 0;
   pointer-events: none;
+  /* visibility: hidden; */
+  opacity: 0;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0;
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   height: 581px;
   width: 528px;
   border-radius: 4px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--main-animation), opacity 250ms var(--main-animation);
 }
 .close-button {
   position: absolute;
   top: 8px;
   right: 8px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  vertical-align: center;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  border: none;
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
