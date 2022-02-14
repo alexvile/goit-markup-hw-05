@@ -466,7 +466,6 @@ p {
 }
 .portf-button-link {
   padding: 6px 22px;
-
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -474,8 +473,9 @@ p {
   text-align: center;
   color: var(--title-text-color);
   background-color: var(--bg-light-color);
+  transition: box-shadow 250ms var(--main-animation), color 250ms var(--main-animation),
+    background-color 250ms var(--main-animation);
 }
-
 .portf-button-link:focus,
 .portf-button-link:hover {
   color: var(--primary-white-color);
